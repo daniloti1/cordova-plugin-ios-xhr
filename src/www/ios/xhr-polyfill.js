@@ -846,7 +846,7 @@
   HandlerFactory._getConfig = function ()
   {
     var promise;
-    HandlerFactory._config = {"InterceptRemoteRequests": "secureOnly", 
+    HandlerFactory._config = {"InterceptRemoteRequests": "none", 
             "NativeXHRLogging": "full"};
       promise = Promise.resolve(HandlerFactory._config);
 
