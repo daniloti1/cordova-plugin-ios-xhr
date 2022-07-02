@@ -846,31 +846,9 @@
   HandlerFactory._getConfig = function ()
   {
     var promise;
-    if (HandlerFactory._config)
-    {
-      promise = Promise.resolve(HandlerFactory._config);
-    }
-    else
-    {
-      promise = new Promise(function (done)
-      {
-        function success(result)
-        {
-          HandlerFactory._config = result;
-          done(HandlerFactory._config);
-        }
-
-        function error()
-        {
-          HandlerFactory._config = {"InterceptRemoteRequests": "secureOnly", 
+    HandlerFactory._config = {"InterceptRemoteRequests": "secureOnly", 
             "NativeXHRLogging": "none"};
-          done(HandlerFactory._config);
-        }
-
-        exec(success, error, "CDVWKWebViewFileXhr", "getConfig", []);
-      });
-
-    }
+      promise = Promise.resolve(HandlerFactory._config);
 
     return promise;
   };
