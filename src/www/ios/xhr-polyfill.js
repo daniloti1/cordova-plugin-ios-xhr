@@ -847,7 +847,7 @@
   {
     var promise;
     HandlerFactory._config = {"InterceptRemoteRequests": "secureOnly", 
-            "NativeXHRLogging": "none"};
+            "NativeXHRLogging": "full"};
       promise = Promise.resolve(HandlerFactory._config);
 
     return promise;
